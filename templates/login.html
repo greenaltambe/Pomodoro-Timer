@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block title%}Home{% endblock %} {% block body %}
+
+<div class="form_main">
+    <div class="header_div">
+        <h1>Log In</h1>
+    </div>
+    <div class="form_div">
+        <form action="/login" method="post">
+            <label for="username">Username</label>
+            <input
+                type="text"
+                name="username"
+                autocomplete="off"
+                placeholder="username"
+            />
+            <br />
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="password" />
+            <br />
+            <input type="submit" value="Login" />
+        </form>
+    </div>
+</div>
+{% endblock %}

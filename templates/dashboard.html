@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% block title%}Home{% endblock %} {% block body %}
+
+<div id="dashboard_container">
+
+    <div id="dashboard_header">
+        <h3>Dashboard</h3>
+    </div>
+
+    <div id="dashboard_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date and Time</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user_data in user_data_table %}
+                <tr>
+                    <td>{{ user_data.start_time.strftime('%B %d, %Y at %I:%M %p') }}</td>
+                    <td>{{ '%d : %d : %d' % (user_data.duration // 3600, (user_data.duration // 60) % 60, user_data.duration % 60) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
